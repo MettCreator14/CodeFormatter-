@@ -116,7 +116,7 @@ textarea {
 
   <script>
 
-    // Recupera il bottone e il campo di input/output
+    
 
     const formatButton = document.querySelector('#format-button');
 
@@ -124,15 +124,15 @@ textarea {
 
     const codeOutput = document.querySelector('#code-output');
 
-    // Aggiungi un evento click al bottone per formattare il codice
+
 
     formatButton.addEventListener('click', () => {
 
-      // Recupera il testo inserito nella textarea
+      
 
       const code = codeInput.value;
 
-      // Scegli il formattatore corretto in base all'estensione del file
+      
 
       let formatter;
 
@@ -150,17 +150,16 @@ textarea {
 
       }
 
-      // Formatta il codice e inseriscilo nell'output
+      
 
       codeOutput.textContent = formatter(code);
 
     });
 
-    // Funzione per formattare il codice HTML
-
+    
     function formatHTML(code) {
 
-      // Usa l'API HTML della libreria DOM per parsare il codice HTML
+      
 
       const parser = new DOMParser();
 
@@ -172,22 +171,18 @@ textarea {
 
     }
 
-    // Funzione per formattare il codice JSON
-
     function formatJSON(code) {
 
-      // Usa JSON.parse e JSON.stringify per formattare il codice JSON
 
       return JSON.stringify(JSON.parse(code), null, 2);
 
     }
 
-    // Funzione per formattare il codice JavaScript
+
 
     function formatJS(code) {
 
-      // Usa l'API di formattazione di CodeMirror per formattare il codice JavaScript
-
+      
       return window.CodeMirror.format(code, {indentUnit: 2});
 
     }
